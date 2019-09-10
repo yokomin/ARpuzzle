@@ -7,25 +7,29 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject startPoint;
     [SerializeField] private GameObject goalPoint;
+    private Rigidbody rigid;
 
     // Start is called before the first frame update
     void Start()
     {
+        rigid = ball.GetComponent<Rigidbody>();
         StartCoroutine(StartGame());
     }
 
     private IEnumerator StartGame(){
+        rigid.useGravity = false;
+        rigid.isKinematic = true;
         ball.transform.position = startPoint.transform.position;
-        ball.GetComponent<Rigidbody>().useGravity = false;
         while(!Input.GetButtonDown("Submit")) yield return null;
-        ball.GetComponent<Rigidbody>().useGravity = true;
+        rigid.useGravity = true;
+        rigid.isKinematic = false;
         yield return StartCoroutine(GameLoop());
     }
 
     private IEnumerator GameLoop(){
         while(true){
             if(ball.transform.position.x < -20 || ball.transform.position.x > 20 
-                || ball.transform.position.z < -15 || ball.transform.position.z > 15){
+                || ball.transform.position.y < -15 || ball.transform.position.y > 15){
                 Debug.Log("Reset");
                 StartCoroutine(StartGame());
                 break;
