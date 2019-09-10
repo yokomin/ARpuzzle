@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="qrcode_square_whiteboard" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_sankaku_whiteboard" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_leftup_whiteboard" size="0.100000 0.100000" />
     <ImageTarget name="qrcode_square" size="0.030000 0.030000" />
     <ImageTarget name="qrcode_sankaku" size="0.030000 0.030000" />
     <ImageTarget name="qrcode_square2" size="0.030000 0.030000" />
