@@ -26,7 +26,7 @@ public class ProbuilderToPrefab : MonoBehaviour
         MeshFilter meshFilter = myMeshGO.GetComponent<MeshFilter>();
 
         //プレハブ化
-        GameObject prefab = PrefabUtility.CreatePrefab("Assets/Triangler.prefab", myMeshGO, ReplacePrefabOptions.Default);
+        GameObject prefab = PrefabUtility.CreatePrefab("Assets/Prefabs/Triangler.prefab", myMeshGO, ReplacePrefabOptions.Default);
 
         //プレハブ化された後のメッシュフィルター
         MeshFilter prefabMeshFilter = prefab.GetComponent<MeshFilter>();

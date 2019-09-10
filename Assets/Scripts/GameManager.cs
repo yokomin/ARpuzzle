@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string[] sceneName;
     [SerializeField] private SelectButton[] buttons;
     private Rigidbody rigid;
+    public bool isGoal{ set; get; }
+    public bool isDead{ set; get; }
     
     private enum GameState{
         ballStop, 
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isGoal = false;
         rigid = ball.GetComponent<Rigidbody>();
         Reset();
         StartCoroutine(GameLoop());
@@ -41,13 +44,20 @@ public class GameManager : MonoBehaviour
         while(true){
             if(ball.transform.position.x < -20 || ball.transform.position.x > 20 
                 || ball.transform.position.y < -15 || ball.transform.position.y > 15){
-                Reset();
+                isDead = true;
             }
 
             if((ball.transform.position - goalPoint.transform.position).sqrMagnitude < 2){
                 StageClear();
                 break;
             }
+
+            if(isGoal){
+                StageClear();
+                break;
+            }
+
+            if(isDead) Reset();
 
             if(Input.GetMouseButtonDown(0)) {
                 Debug.Log("mouse");
@@ -70,11 +80,11 @@ public class GameManager : MonoBehaviour
 
         text.text = stageName + " Clear!";
         for(int i = 0; i < sceneName.Length; i++){
-            buttons[i].setSceneName("Scenes/"+sceneName[i]);
+            buttons[i].SceneName = "Scenes/"+sceneName[i];
             buttons[i].setButtonName(sceneName[i]);
             buttons[i].gameObject.SetActive(true);
         }
-        titleButton.setSceneName("Scenes/"+titleScene);
+        titleButton.SceneName = "Scenes/"+titleScene;
         titleButton.setButtonName("タイトルに戻る");
         titleButton.gameObject.SetActive(true);
     }
@@ -84,6 +94,7 @@ public class GameManager : MonoBehaviour
         rigid.isKinematic = true;
         ball.transform.position = startPoint.transform.position;
         gameState = GameState.ballStop;
+        isDead = false;
         Debug.Log("Reset:" + gameState);
     }
 

@@ -14,7 +14,7 @@ public class Title : MonoBehaviour
     void Start()
     {
         for(int i = 0; i < sceneName.Length; i++){
-            buttons[i].setSceneName("Scenes/"+sceneName[i]);
+            buttons[i].SceneName = "Scenes/"+sceneName[i];
             buttons[i].setButtonName(sceneName[i]);
         }
     }

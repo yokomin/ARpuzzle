@@ -6,16 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class SelectButton : MonoBehaviour
 {
-    private string sceneName = "SceneName";
+
+    public string SceneName { set; get; }
+
     [SerializeField] private Text buttonText;
 
     public void OnClick() {
         Debug.Log("Button click!");
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void setSceneName(string name){
-        sceneName = name;
+        SceneManager.LoadScene(SceneName);
     }
 
     public void setButtonName(string name){
