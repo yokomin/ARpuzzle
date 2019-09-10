@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73723365}
   - component: {fileID: 73723364}
+  - component: {fileID: 73723366}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -149,9 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799979474994c42d381334d350aba500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 2028282959}
-  startPoint: {fileID: 857116733}
-  goalPoint: {fileID: 1633230320}
 --- !u!4 &73723365
 Transform:
   m_ObjectHideFlags: 0
@@ -166,6 +164,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73723366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73723363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20baed3f359344e88b5be09f788bb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 2028282959}
+  startPoint: {fileID: 857116733}
+  goalPoint: {fileID: 1633230320}
 --- !u!1 &211552527
 GameObject:
   m_ObjectHideFlags: 0
