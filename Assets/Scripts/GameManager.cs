@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject startPoint;
     [SerializeField] private GameObject goalPoint;
+    [SerializeField] private string stageName;
+    [SerializeField] private Text text;
     private Rigidbody rigid;
 
     private enum GameState{
@@ -20,8 +23,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         rigid = ball.GetComponent<Rigidbody>();
+        StartCoroutine(StartGame());
         Reset();
         StartCoroutine(GameLoop());
+    }
+
+    private IEnumerator StartGame(){
+        text.text = stageName;
+        yield return new WaitForSeconds(2.0f);
+        text.text = "Start!";
+        yield return new WaitForSeconds(2.0f);
+        text.text = "";
     }
 
     private IEnumerator GameLoop(){
@@ -54,6 +66,8 @@ public class GameManager : MonoBehaviour
         rigid.useGravity = false;
         rigid.isKinematic = true;
         Debug.Log("Clear");
+
+        text.text = stageName + " Clear!";
     }
 
     private void Reset(){
