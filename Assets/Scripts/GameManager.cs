@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         rigid.useGravity = false;
         rigid.isKinematic = true;
         ball.transform.position = startPoint.transform.position;
-        while(!Input.GetButtonDown("Submit")) yield return null;
+        while(!Input.GetMouseButtonDown(0)) yield return null;
         rigid.useGravity = true;
         rigid.isKinematic = false;
         yield return StartCoroutine(GameLoop());
@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void StageClear(){
+        rigid.useGravity = false;
+        rigid.isKinematic = true;
         Debug.Log("Clear");
     }
 }
