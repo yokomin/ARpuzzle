@@ -259,6 +259,8 @@ MonoBehaviour:
   ball: {fileID: 2028282959}
   startPoint: {fileID: 857116733}
   goalPoint: {fileID: 1633230320}
+  stageName: 
+  text: {fileID: 0}
 --- !u!1001 &94843333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2641,7 +2643,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1908660163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39ebd263beecd461ba7fc74b5a0876d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d3fa11356b2946568c66cf4f78527c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1908660165
