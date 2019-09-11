@@ -165,7 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 2028282959}
   startPoint: {fileID: 857116733}
-  goalPoint: {fileID: 1633230320}
   stageName: TestStage
   text: {fileID: 479985680}
   titleScene: TitleScene
@@ -753,7 +752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857116733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.6, y: 9.46, z: -0.5}
+  m_LocalPosition: {x: 8.46, y: 9.46, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 338117310}
@@ -1381,6 +1380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 73723366}
+  grave: {fileID: 7405295979103807476, guid: 0941135452cbe432ab72fab466b8bd0b, type: 3}
 --- !u!1001 &5612651774224398014
 PrefabInstance:
   m_ObjectHideFlags: 0
