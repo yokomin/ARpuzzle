@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
                 break;
             }
 
-            if(isDead) 
+            if(isDead)
                 Reset();
 
             if(Input.GetMouseButtonDown(0)) {
