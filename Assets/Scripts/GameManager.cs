@@ -13,7 +13,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SelectButton titleButton;
     [SerializeField] private string[] sceneName;
     [SerializeField] private SelectButton[] buttons;
+    [SerializeField] private GameObject[] resetObject;
+
+    private int resetLength;
     private Rigidbody rigid;
+    private Vector3[] resetPos;
+    private Quaternion[] resetRot;
+    private Rigidbody[] resetRigid;
     public bool isGoal{ set; get; }
     public bool isDead{ set; get; }
     
@@ -27,6 +33,19 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        resetLength = resetObject.Length;
+        if(resetLength != 0){
+            resetPos = new Vector3[resetLength];
+            resetRot = new Quaternion[resetLength];
+            resetRigid = new Rigidbody[resetLength];
+
+            for(int i = 0; i < resetLength; i++){
+                resetPos[i] = resetObject[i].transform.position;
+                resetRot[i] = resetObject[i].transform.rotation;
+                resetRigid[i] = resetObject[i].GetComponent<Rigidbody>();
+            }
+        }
+        
         isGoal = false;
         rigid = ball.GetComponent<Rigidbody>();
         Reset();
@@ -57,7 +76,7 @@ public class GameManager : MonoBehaviour
             if(Input.GetMouseButtonDown(0)) {
                 Debug.Log("mouse");
                 if(gameState == GameState.ballStop) {
-                    BallDrop();
+                    Drop();
                 }else if(gameState == GameState.ballActive){
                     Reset();
                 }
@@ -88,14 +107,32 @@ public class GameManager : MonoBehaviour
         rigid.useGravity = false;
         rigid.isKinematic = true;
         ball.transform.position = startPoint.transform.position;
+
+        if(resetLength != 0){
+            for(int i = 0; i < resetLength; i++){
+                resetObject[i].transform.position = resetPos[i];
+                resetObject[i].transform.rotation = resetRot[i];
+                resetRigid[i].useGravity = false;
+                resetRigid[i].isKinematic = true;
+            }
+        }
+        
         gameState = GameState.ballStop;
         isDead = false;
         Debug.Log("Reset:" + gameState);
     }
 
-    private void BallDrop(){
+    private void Drop(){
         rigid.useGravity = true;
         rigid.isKinematic = false;
+
+        if(resetLength != 0){
+            for(int i = 0; i < resetLength; i++){
+                resetRigid[i].useGravity = true;
+                resetRigid[i].isKinematic = false;
+            }
+        }
+
         gameState = GameState.ballActive;
         Debug.Log("Drop:" + gameState);
     }

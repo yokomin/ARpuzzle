@@ -12,7 +12,6 @@ public class SelectButton : MonoBehaviour
     [SerializeField] private Text buttonText;
 
     public void OnClick() {
-        Debug.Log("Button click!");
         SceneManager.LoadScene(SceneName);
     }
 
