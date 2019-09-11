@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class BallCollider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] private GameManager gameManager;
+
+    void OnTriggerEnter(Collider col){
+        Debug.Log(col.gameObject.tag);
+        if(col.gameObject.tag == "Goal"){
+            gameManager.isGoal = true;
+        } else if(col.gameObject.tag == "Enemy"){
+            gameManager.isDead = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnCollisionEnter(Collision col){
+        Debug.Log(col.gameObject.tag);
+        if(col.gameObject.tag == "Enemy") 
+            gameManager.isDead = true;
     }
-
-    
 }

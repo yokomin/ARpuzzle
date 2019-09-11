@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject startPoint;
-    [SerializeField] private GameObject goalPoint;
     [SerializeField] private string stageName;
     [SerializeField] private Text text;
     [SerializeField] private string titleScene = "TitleScene";
@@ -47,17 +46,13 @@ public class GameManager : MonoBehaviour
                 isDead = true;
             }
 
-            if((ball.transform.position - goalPoint.transform.position).sqrMagnitude < 2){
-                StageClear();
-                break;
-            }
-
             if(isGoal){
                 StageClear();
                 break;
             }
 
-            if(isDead) Reset();
+            if(isDead) 
+                Reset();
 
             if(Input.GetMouseButtonDown(0)) {
                 Debug.Log("mouse");

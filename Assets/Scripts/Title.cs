@@ -18,10 +18,4 @@ public class Title : MonoBehaviour
             buttons[i].setButtonName(sceneName[i]);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
