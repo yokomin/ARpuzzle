@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="qrcode_square_whiteboard" size="0.100000 0.100000" />
-    <ImageTarget name="qrcode_sankaku_whiteboard" size="0.100000 0.100000" />
-    <ImageTarget name="qrcode_leftup_whiteboard" size="0.100000 0.100000" />
-    <ImageTarget name="qrcode_square" size="0.030000 0.030000" />
-    <ImageTarget name="qrcode_sankaku" size="0.030000 0.030000" />
-    <ImageTarget name="qrcode_square2" size="0.030000 0.030000" />
-    <ImageTarget name="qrcode_sankaku2" size="0.030000 0.030000" />
-    <ImageTarget name="qrcode_leftup" size="0.030000 0.030000" />
+    <ImageTarget name="qrcode_semicircle3" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_semicircle2" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_semicircle1" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_square3" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_square2" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_square1" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_sankaku2" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_sankaku3" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_sankaku1" size="0.100000 0.100000" />
+    <ImageTarget name="qrcode_leftup" size="0.100000 0.100000" />
     <ImageTarget name="pattern-41250" size="0.050000 0.050000" />
     <ImageTarget name="abemakun" size="0.050000 0.055150" />
     <ImageTarget name="CA_400x400" size="0.050000 0.050000" />
