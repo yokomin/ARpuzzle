@@ -35,7 +35,8 @@ public class ProbuilderToPrefab : MonoBehaviour
         prefabMeshFilter.sharedMesh = meshFilter.sharedMesh;
 
         //メッシュデータそのものを同じプレハブの中に詰める
-        AssetDatabase.AddObjectToAsset(meshFilter.sharedMesh, prefab);
+        //AssetDatabase.AddObjectToAsset(meshFilter.sharedMesh, prefab);
+        AssetDatabase.CreateAsset(meshFilter.sharedMesh, "Assets/Prefabs/TrianglerMesh.asset");
 
         //アセットのアップデート
         AssetDatabase.SaveAssets();
