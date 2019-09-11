@@ -665,7 +665,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pazzle
+  m_Text: Puzzle
 --- !u!222 &479985681
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -696,6 +696,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1633230321}
     m_Modifications:
+    - target: {fileID: 6080186342504872058, guid: 803972a80df4f414f812c2c9599b8525,
+        type: 3}
+      propertyPath: m_Name
+      value: racing_flag
+      objectReference: {fileID: 0}
     - target: {fileID: 6080186342504440922, guid: 803972a80df4f414f812c2c9599b8525,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -765,11 +770,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.089264765
-      objectReference: {fileID: 0}
-    - target: {fileID: 6080186342504872058, guid: 803972a80df4f414f812c2c9599b8525,
-        type: 3}
-      propertyPath: m_Name
-      value: racing_flag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 803972a80df4f414f812c2c9599b8525, type: 3}
@@ -1729,6 +1729,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5776265132943161011, guid: 8c106df85d49546c182407a3374d4197,
+        type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776265132943161011, guid: 8c106df85d49546c182407a3374d4197,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776265132943161011, guid: 8c106df85d49546c182407a3374d4197,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776265132943161011, guid: 8c106df85d49546c182407a3374d4197,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5776265132943161010, guid: 8c106df85d49546c182407a3374d4197,
         type: 3}
       propertyPath: m_Sprite
@@ -1753,26 +1773,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.9137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776265132943161011, guid: 8c106df85d49546c182407a3374d4197,
-        type: 3}
-      propertyPath: m_Transition
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776265132943161011, guid: 8c106df85d49546c182407a3374d4197,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776265132943161011, guid: 8c106df85d49546c182407a3374d4197,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776265132943161011, guid: 8c106df85d49546c182407a3374d4197,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.b
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5776265132863496312, guid: 8c106df85d49546c182407a3374d4197,
         type: 3}
