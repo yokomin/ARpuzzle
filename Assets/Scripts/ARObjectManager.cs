@@ -11,7 +11,7 @@ public class ARObjectManager : MonoBehaviour
     {
         foreach (GameObject StageMarker in StagesMarkers)
         {
-            StageMarker.transform.eulerAngles = new Vector3(270, 0, 0);
+            StageMarker.transform.eulerAngles = new Vector3(270, 0, StageMarker.transform.eulerAngles.z);
         }
     }
 }
