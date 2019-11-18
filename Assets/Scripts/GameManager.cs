@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
             buttons[i].gameObject.SetActive(true);
         }
         titleButton.SceneName = "Scenes/"+titleScene;
-        titleButton.setButtonName("タイトルに戻る");
+        titleButton.setButtonName("Back to Title");
         titleButton.gameObject.SetActive(true);
     }
 
