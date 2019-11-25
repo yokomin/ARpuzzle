@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         
         isGoal = false;
         rigid = ball.GetComponent<Rigidbody>();
+        DeleteButton();
         Reset();
         StartCoroutine(GameLoop());
     }
@@ -93,6 +94,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("Clear");
 
         text.text = stageName + " Clear!";
+        ShowButton();
+    }
+
+    private void ShowButton(){
         for(int i = 0; i < sceneName.Length; i++){
             buttons[i].SceneName = "Scenes/"+sceneName[i];
             buttons[i].setButtonName(sceneName[i]);
@@ -101,6 +106,11 @@ public class GameManager : MonoBehaviour
         titleButton.SceneName = "Scenes/"+titleScene;
         titleButton.setButtonName("Back to Title");
         titleButton.gameObject.SetActive(true);
+    }
+
+    private void DeleteButton(){
+        for(int i = 0; i < sceneName.Length; i++) buttons[i].gameObject.SetActive(false);
+        titleButton.gameObject.SetActive(false);
     }
 
     private void Reset(){
