@@ -23,12 +23,7 @@ public class GameManager : MonoBehaviour
     public bool isGoal{ set; get; }
     public bool isDead{ set; get; }
     
-    private enum GameState{
-        ballStop, 
-        ballActive
-    }
-
-    private GameState gameState;
+    private bool ballActive;
 
     // Start is called before the first frame update
     void Start()
@@ -76,9 +71,9 @@ public class GameManager : MonoBehaviour
 
             if(Input.GetMouseButtonDown(0)) {
                 Debug.Log("mouse");
-                if(gameState == GameState.ballStop) {
+                if(!ballActive) {
                     Drop();
-                }else if(gameState == GameState.ballActive){
+                }else if(ballActive){
                     Reset();
                 }
             }
@@ -127,9 +122,8 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        gameState = GameState.ballStop;
+        ballActive = false;
         isDead = false;
-        Debug.Log("Reset:" + gameState);
     }
 
     private void Drop(){
@@ -143,7 +137,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        gameState = GameState.ballActive;
-        Debug.Log("Drop:" + gameState);
+        ballActive = true;
     }
 }
